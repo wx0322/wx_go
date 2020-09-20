@@ -9,5 +9,7 @@ type ArticleController struct {
 }
 
 func (c *ArticleController) Get(){
+	username := c.GetSession("username")
+	c.Data["username"] = username
 	c.TplName="article.html"
 }

@@ -9,5 +9,7 @@ type ProductController struct {
 }
 
 func (c *ProductController) Get(){
+	username := c.GetSession("username")
+	c.Data["username"] = username
 	c.TplName="product.html"
 }
